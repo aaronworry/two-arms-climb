@@ -1,5 +1,6 @@
 import numpy as np
 import pyglet
+import time
 
 class KinematicEnv():
     viewer = None
@@ -63,7 +64,7 @@ class KinematicEnv():
             if - self.width / 2 < self.upPointLocation[1] - self.downPointLocation[1] - 200 < self.width / 2:
                 r += 1.
                 self.on_goal += 1
-                if self.on_goal > 50:
+                if self.on_goal > 3: #while training ddpg, it should be 50
                     done = True
         else:
             self.on_goal = 0
@@ -104,7 +105,7 @@ class KinematicEnv():
             if - self.width / 2 < self.upPointLocation[1] - self.downPointLocation[1] - 100 < self.width / 2:
                 r += 1.
                 self.on_goal += 1
-                if self.on_goal > 50:
+                if self.on_goal > 3:  #while training ddpg, it is set as 50
                     done = True
         else:
             self.on_goal = 0
@@ -243,5 +244,6 @@ class Viewer(pyglet.window.Window):
 if __name__ == '__main__':
     a = KinematicEnv()
     while True:
+        time.sleep(0.1)
         a.render()
         a.stepUp(a.random_action())
