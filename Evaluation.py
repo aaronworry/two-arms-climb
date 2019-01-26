@@ -43,7 +43,7 @@ def initial():
 def evalWithHardCode():
     s = initial()
     while True:
-        time.sleep(0.04)
+        time.sleep(0.05)
         env.render()
         label1, label2, label3 = s[0], s[8], s[9] - s[1]
         if -20. < label1 < 20. and -20. < label2 < 20.:
@@ -65,7 +65,7 @@ def evalWithHardCode():
 def evalWithoutLimit():
     s = initial()
     while True:
-        time.sleep(0.04)
+        time.sleep(0.05)
         env.render()
         a0 = Q.choose_action(s)
         if a0 == 0:
@@ -80,7 +80,7 @@ def evalWithoutLimit():
 def evalAll():
     s = initial()
     while True:
-        time.sleep(0.04)
+        time.sleep(0.05)
         env.render()
         a0 = Q.choose_action(s)
         if a0 == 0 and -20.<s[0]<20.:
