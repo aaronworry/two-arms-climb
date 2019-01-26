@@ -1,6 +1,7 @@
 from kinematicEnv import KinematicEnv
 from upDDPG import DDPG
 import numpy as np
+import time
 
 MAX_EPISODES = 9000
 MAX_EP_STEPS = 300
@@ -57,6 +58,7 @@ def eval():
     env.viewer.set_vsync(True)
     s = initial()
     while True:
+        time.sleep(0.1)
         env.render()
         a = rl.choose_action(s)
         s, r, done = env.stepUp(a)
