@@ -7,6 +7,7 @@ GAMMA = 0.9
 LR = 0.001
 EPSILONMAX = 0.9
 
+
 class QL():
     def __init__(self, a_dim, s_dim):
         self.sess = tf.Session()
