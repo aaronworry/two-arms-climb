@@ -28,7 +28,6 @@ with g3.as_default():
     Q = QL(2, s_dim)
 
 
-
 def initial():
     tt = np.random.randint(0, 3)
     if tt == 0:
