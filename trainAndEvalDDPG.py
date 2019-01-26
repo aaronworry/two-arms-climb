@@ -1,6 +1,7 @@
 from kinematicEnv import KinematicEnv
 from bottomDDPG import DDPG
 import numpy as np
+import time
 
 MAX_EPISODES = 3000
 MAX_EP_STEPS = 200
@@ -55,6 +56,7 @@ def eval():
     env.viewer.set_vsync(True)
     s = initial()
     while True:
+        time.sleep(0.1)
         env.render()
         a = rl.choose_action(s)
         s, r, done = env.stepDown(a)
