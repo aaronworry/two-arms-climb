@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 
-
 LR_A = 0.001    # learning rate for actor
 LR_C = 0.001    # learning rate for critic
 GAMMA = 0.9     # reward discount
